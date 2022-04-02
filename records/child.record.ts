@@ -1,8 +1,8 @@
 import {pool} from "../utils/db";
 import {ValidationError} from "../utils/errors";
 import {v4 as uuid} from "uuid";
-import {ChildEntity} from "../types/EntityTypes";
 import {FieldPacket} from "mysql2";
+import {ChildEntity} from "../types";
 
 class ChildRecord implements ChildEntity {
 

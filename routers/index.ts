@@ -3,7 +3,8 @@ import {Request, Response, Router} from "express";
 import {ChildRecord} from "../records/child.record";
 import {GiftRecord} from "../records/gift.record";
 import {ValidationError} from "../utils/errors";
-import {ChildEntity} from "../types/EntityTypes";
+import {ChildEntity} from "../types";
+
 
 
 const childRouter = Router();

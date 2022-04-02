@@ -1,12 +1,12 @@
 import {pool} from "../utils/db";
 import {ValidationError} from "../utils/errors";
 import {v4 as uuid} from 'uuid';
-import {countGift, GiftEntity} from "../types/EntityTypes"
 import {FieldPacket} from "mysql2";
+import {countGift, GiftEntity} from "../types";
 
-class GiftRecord implements GiftEntity{
+class GiftRecord implements GiftEntity {
 
-    id: string;
+    id?: string;
     name: string;
     count: number;
 
@@ -36,6 +36,11 @@ class GiftRecord implements GiftEntity{
 
         return this.id;
     }
+
+    async delete(): Promise<void> {
+        await pool.execute("DELETE FROM `gifts` WHERE `id` = :id", {id: this.id});
+    }
+
 
     static async listAll(): Promise<GiftRecord[]> {
         const [results] = await pool.execute("SELECT * FROM `gifts`") as [GiftEntity[], FieldPacket[]];

@@ -2,9 +2,9 @@ import {createPool} from "mysql2/promise";
 
 const pool = createPool({
     host: 'localhost',
-    user: 'phpmyadmin',
+    user: 'AdrianeZ',
     database: 'megak_santa',
-    password: "brutusex12",
+    password: "brutus12",
     namedPlaceholders: true,
     decimalNumbers: true,
 
